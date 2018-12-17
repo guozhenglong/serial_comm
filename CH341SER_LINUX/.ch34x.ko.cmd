@@ -1,1 +1,0 @@
-cmd_/home/zhenglong/CH341SER_LINUX/ch34x.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/zhenglong/CH341SER_LINUX/ch34x.ko /home/zhenglong/CH341SER_LINUX/ch34x.o /home/zhenglong/CH341SER_LINUX/ch34x.mod.o ;  true
