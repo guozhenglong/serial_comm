@@ -1,4 +1,4 @@
-#* serial_comm*
+# *serial_comm*
 
 # Install the ch341 Driver:
 1. delete the old driver
@@ -53,6 +53,10 @@ If not, failure will happend when building the driver.
 
 ## about the float data transmission
 In the serial write node, I make a tricks transform float data to int data. That make process of decodeing the data more simply. 
-`(int) = (float)*10000` 
+`(int) = (double)*10000` 
+In the serial read node,
+`(double) = (int)/10000`
+
+# welcomt to report your question about this reposity. Email: guozhenglong.cn@gmail.com
 
    
