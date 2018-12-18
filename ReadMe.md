@@ -1,5 +1,6 @@
-# *serial_comm*
-
+# *serial_comm* 
+# Evironment
+Ubuntu 16.04 + ROS Kinetic
 # Install the ch341 Driver:
 1. delete the old driver
 ```
@@ -56,7 +57,10 @@ In the serial write node, I make a tricks transform float data to int data. That
 `(int) = (double)*10000` 
 In the serial read node,
 `(double) = (int)/10000`
-
+## recommend using `cutecom` to help your work in ubuntu platform.
+```
+sudo apt install cutecom -y
+```
 # welcomt to report your question about this reposity. Email: guozhenglong.cn@gmail.com
 
    
