@@ -1,5 +1,5 @@
 # *serial_comm* 
-# Evironment
+# Environment
 Ubuntu 16.04 + ROS Kinetic
 # Install the ch341 Driver:
 1. delete the old driver
