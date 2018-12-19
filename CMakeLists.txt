@@ -37,10 +37,11 @@ add_executable(comm_write
   src/comm_write_node.cpp
 )
 target_link_libraries(comm_write ${catkin_LIBRARIES} ${self_LIBRARIES})
-
+add_dependencies(comm_write ${catkin_EXPORTED_TARGETS})
 
 add_executable(comm_read
   src/comm_read.cpp
   src/comm_read_node.cpp
 )
 target_link_libraries(comm_read ${catkin_LIBRARIES} ${self_LIBRARIES} ${OpenCV_LIBRARIES})
+add_dependencies(comm_read ${catkin_EXPORTED_TARGETS})
