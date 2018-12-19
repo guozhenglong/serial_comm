@@ -19,6 +19,8 @@ namespace serial_mul
 typedef struct
 {
     uint8_t sof;
+    int32_t sec;
+    int32_t nsec;
     int32_t ax;
     int32_t ay;
     int32_t vz;

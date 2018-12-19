@@ -47,7 +47,7 @@ bool comm_read::read_setup()
 
 
 
-void comm_read::read_data()
+void comm_read::read_data(int32_t sec, int32_t nsec)
 {
   
   uint8_t buff[data_len];
@@ -56,6 +56,10 @@ void comm_read::read_data()
   memcpy(&data, buff, sizeof(data_t));
   if(data.sof==0xA5 && data.end == 0xFE)
   {
+    pubCmdData.wr_sec = data.sec;
+    pubCmdData.wr_nsec = data.nsec;
+    pubCmdData.rd_sec = sec;
+    pubCmdData.rd_nsec = nsec;
     pubCmdData.a_x = (double)data.ax;
     pubCmdData.a_y = (double)data.ay;
     pubCmdData.v_z = (double)data.vz;

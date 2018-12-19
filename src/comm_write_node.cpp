@@ -8,6 +8,9 @@ void vel_callback(const geometry_msgs::Twist::ConstPtr& vel_data)
 {
   std::cout<<*vel_data<<std::endl;
   // *10000   transform double to int, for serial transmission.
+  ros::Time t_stamp = ros::Time::now(); 
+  data.sec = t_stamp.sec;
+  data.nsec = t_stamp.nsec;
   data.ax = (int32_t)(vel_data->linear.x*10000);
   data.ay = (int32_t)(vel_data->linear.y*10000);
   data.vz = (int32_t)(vel_data->linear.z*10000);

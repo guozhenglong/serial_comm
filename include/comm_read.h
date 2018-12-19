@@ -23,6 +23,8 @@ namespace serial_mul
 typedef struct
 {
   uint8_t sof;
+  int32_t sec;
+  int32_t nsec;
   int32_t ax;
   int32_t ay;
   int32_t vz;
@@ -43,7 +45,7 @@ public:
   /**
    * @brief reading data from serial
    */
-  void read_data();
+  void read_data(int32_t sec, int32_t nsec);
 public:
   serial_comm::Cmd_uav pubCmdData;
   
