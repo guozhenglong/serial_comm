@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
   pnh.param("baudrate", baud, B9600); 
   pnh.param("Hz",Hz,Hz_default);
   ros::Publisher publisher = nh.advertise<geometry_msgs::Twist>("uav_cmd_vel", 100);
-
+  ros::Publisher raw_data_pub = nh.advertise<serial_comm::Cmd_uav>("Cmd_uav_raw", 100);
   serial_mul::comm_read uav_comm_read(serial_port,baud);
   geometry_msgs::Twist pub_uav_cmd;
   ros::Rate loopRate(Hz);
@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
     printf("yaw rate:    %f\n",pub_uav_cmd.angular.z);
     printf("---------------------\n");
     publisher.publish(pub_uav_cmd);
+    raw_data_pub.publish(uav_comm_read.pubCmdData);
     loopRate.sleep();
   }
   return 0;
